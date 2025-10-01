@@ -19,87 +19,133 @@ const features = [
   {
     title: "Speaking Practice",
     desc: "Daily speaking sessions with mentors to boost confidence.",
-    icon: <ChatIcon fontSize="large" />,
+    icon: <ChatIcon fontSize="large" sx={{ color: '#1AA7A9'  }} />,
   },
   {
     title: "Mock Tests",
     desc: "Full-length timed practice tests with instant feedback.",
-    icon: <AssignmentIcon fontSize="large" />,
+    icon: <AssignmentIcon fontSize="large" sx={{ color: '#1AA7A9'  }} />,
   },
   {
     title: "AI Band Score",
     desc: "Get AI-powered predictions for your IELTS band.",
-    icon: <SmartToyIcon fontSize="large" />,
+    icon: <SmartToyIcon fontSize="large" sx={{ color: '#1AA7A9'  }} />,
   },
   {
     title: "Personal Guidance",
     desc: "One-on-one mentoring sessions with certified trainers.",
-    icon: <PersonIcon fontSize="large" />,
+    icon: <PersonIcon fontSize="large" sx={{ color: '#1AA7A9'  }} />,
   },
   {
     title: "Vocabulary Builder",
     desc: "Interactive exercises to expand word power and improve IELTS vocabulary.",
-    icon: <MenuBookIcon fontSize="large" />,
+    icon: <MenuBookIcon fontSize="large" sx={{ color: '#1AA7A9'  }} />,
   },
   {
     title: "Progress Tracking",
     desc: "Track your daily, weekly, and monthly performance with detailed reports.",
-    icon: <BarChartIcon fontSize="large" />,
+    icon: <BarChartIcon fontSize="large" sx={{ color: '#1AA7A9'  }} />,
   },
 ];
 
+
+
+
 export default function Features() {
   return (
-     <Box mt={5} component='section' id="features">
-      <Container
-        mt={3}
-        sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-        }}
-      >
+     <Box mt={2} component='section' id="features" sx={{ py: 6 }}>
+      <Container> 
         <Stack
           spacing={2}
           useFlexGap
-          sx={{ alignItems: 'center', width: { xs: '70%', sm: '70%' } }}
+          sx={{ alignItems: 'center', mb: 4 }}
         >
-          <StarIcon sx={{ fontSize: 50 }} />
+          <StarIcon sx={{ fontSize: 50, color: '#1AA7A9'  }} />
           <Typography
             variant="h3"
+            component="h2"
             sx={{
-              display: 'flex',
-              flexDirection: { sm: '100%', md: '70%' },
               textAlign: 'center',
-             
+              color: '#005086',
             }}
           >
-            Our Features
+            Our Core Features
           </Typography>
-
-          <Divider />
-         
-          <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 3 }}>
-      {features.map((card) => (
-        <Card key={card.title} sx={{ maxWidth: 345 }}>
-      <CardActionArea>
-        <CardContent>
-          <div >
-            {card.icon}
-          </div>  
-          <Typography gutterBottom variant="h5" component="div">
-             {card.title}
-          </Typography>
-          <Divider />
-          <Typography variant="body1" sx={{ color: 'text.secondary' }}>
-           {card.desc}
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-    </Card>
-      ))}
-        </Grid>
+          <Divider sx={{ width: '100px', bgcolor: '#1AA7A9' }} />
         </Stack>
+         
+        
+        <Grid 
+          container 
+          spacing={{ xs: 2, md: 3 }} 
+          justifyContent="center" 
+        >
+          {features.map((card) => (
+            <Grid 
+              item 
+              key={card.title} 
+              xs={12}   
+              sm={6}    
+              md={4}    
+            >
+              <Card 
+                sx={{  
+                 
+                  height: 220,
+                  width:{md:550,sm:320,xs:320   }, 
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'center', 
+                  textAlign: 'center', 
+                  transition: 'transform 0.3s',
+                  '&:hover': { 
+                    transform: 'translateY(-5px)', 
+                    boxShadow: 6 
+                  },
+                }} 
+                elevation={3}
+              >
+                <CardActionArea sx={{ height: '100%' }}>
+                  <CardContent sx={{ p: 2 }}>
+                    
+                    
+                    {card.icon}
+                        
+                    
+                    <Typography 
+                        gutterBottom 
+                        variant="h5" 
+                        component="div" 
+                        sx={{ 
+                            color: '#005086', 
+                            mt: 1, 
+                            mb: 0.5 
+                        }} 
+                    >
+                        {card.title}
+                    </Typography>
+
+                    
+                    <Typography 
+                        variant="body2" 
+                        sx={{ 
+                            color: '#005087', 
+                            overflow: 'hidden',
+                            textOverflow: 'ellipsis',
+                            display: '-webkit-box',
+                            WebkitLineClamp: 2, 
+                            WebkitBoxOrient: 'vertical',
+                            mx: 'auto'
+                        }}
+                    >
+                        {card.desc}
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
       </Container>
     </Box>
   );

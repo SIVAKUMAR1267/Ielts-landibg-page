@@ -9,7 +9,7 @@ export default function Footer() {
       sx={{
         px: { xs: 6, md: 20 },
         py: 8,
-        bgcolor: "#212121",
+        bgcolor: "#005086",
         color: "white",
         textAlign: "center",
       }}
@@ -18,36 +18,36 @@ export default function Footer() {
         IELTSPro Institute
       </Typography>
 
-      {/* Quote / Reward Text */}
+      
       <Typography variant="h6" sx={{ mb: 4, fontWeight: 500 }}>
         Where Preparation Meets Perfection.
       </Typography>
 
-      {/* Links */}
+  
       <Stack
         direction="row"
         spacing={{ xs: 2, md: 6 }}
         justifyContent="center"
         flexWrap="wrap"
       >
-        <Link href="#" underline="hover" color="inherit">
+        <Link href="#" underline="hover" color="#fafafa">
           About Us
         </Link>
-        <Link href="#" underline="hover" color="inherit">
+        <Link href="#" underline="hover" color="#fafafa">
           Careers
         </Link>
-        <Link href="#" underline="hover" color="inherit">
+        <Link href="#" underline="hover" color="#fafafa">
           Press
         </Link>
-        <Link href="#" underline="hover" color="inherit">
+        <Link href="#" underline="hover" color="#fafafa">
           Blog
         </Link>
-        <Link href="#" underline="hover" color="inherit">
+        <Link href="#" underline="hover" color="#fafafa">
           Pricing
         </Link>
       </Stack>
 
-      {/* Copyright */}
+
       <Typography variant="body2" sx={{ mt: 6 }}>
         © {new Date().getFullYear()} IELTSPro. All rights reserved.
       </Typography>

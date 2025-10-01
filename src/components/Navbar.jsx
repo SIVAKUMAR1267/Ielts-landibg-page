@@ -26,29 +26,29 @@ function DrawerAppBar(props) {
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
+    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center'}}>
+      <Typography variant="h6" sx={{ my: 2, color: '#FAFAFA' }}>
         IELTSPro
       </Typography>
       <Divider />
       <List>
          <ListItem disablePadding>
             <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText><Button component='a' href='#features' >Features</Button></ListItemText>
+              <ListItemText><Button component='a' href='#features' sx={{ color: '#FAFAFA' }} >Features</Button></ListItemText>
             </ListItemButton>
           </ListItem>
       </List>
       <List>
          <ListItem disablePadding>
             <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText><Button component='a' href='#testimonials' >Testimonials</Button></ListItemText>
+              <ListItemText><Button component='a' href='#testimonials' sx={{ color: '#FAFAFA' }} >Testimonials</Button></ListItemText>
             </ListItemButton>
           </ListItem>
       </List>
       <List>
          <ListItem disablePadding>
             <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText > <Button component='a' href='#contact' > Contact</Button> </ListItemText>
+              <ListItemText > <Button component='a' href='#contact' sx={{ color: '#FAFAFA' }} > Contact</Button> </ListItemText>
             </ListItemButton>
           </ListItem>
       </List>
@@ -64,34 +64,35 @@ function DrawerAppBar(props) {
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
       <AppBar component="nav" sx={{
-          bgcolor: '#fafafa' }}>
+          bgcolor: '#005086' }}>
         <Toolbar>
           <IconButton
-            color="#212121"
+            color="#FAFAFA"
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
             sx={{ mr: 2, display: { sm: 'none' } }}
           >
-            <MenuIcon />
+            <MenuIcon sx={{ color: '#FAFAFA' }} />
            </IconButton>
           <Typography
             variant="h6"
             component="div"
-            sx={{ flexGrow: 1, color: '#212121', display: { xs: 'flex', sm: 'block' } }}
+            sx={{ flexGrow: 1, color: '#FAFAFA', display: { xs: 'flex', sm: 'block' } }}
           >
             IELTSPro
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-            <Button component='a' href='#features' sx={{ color: '#212121' }}>
+            <Button component='a' href='#features' sx={{ color: '#FAFAFA' }}>
                 Features
               </Button>
-            <Button component='a' href='#testimonials' sx={{ color: '#212121' }}>
+            <Button component='a' href='#testimonials' sx={{ color: '	#FAFAFA' }}>
                 Testimonials
               </Button>
-            <Button component='a' href='#contact' sx={{ color: '#212121' }}>
+            <Button component='a' href='#contact' sx={{ color: '	#FAFAFA' }}>
                 Contact
               </Button>
+              
           </Box>
         </Toolbar>
       </AppBar>
@@ -106,7 +107,7 @@ function DrawerAppBar(props) {
           }}
           sx={{
             display: { xs: 'block', sm: 'none' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth, bgcolor: '#005086' },
           }}
         >
           {drawer}

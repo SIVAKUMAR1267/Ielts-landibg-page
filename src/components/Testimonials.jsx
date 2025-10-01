@@ -7,7 +7,8 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardActionArea from '@mui/material/CardActionArea';
 import Divider from '@mui/material/Divider';
-import PersonIcon from "@mui/icons-material/Person";
+import StarIcon from '@mui/icons-material/Star';
+import Rating from '@mui/material/Rating';
 import Avatar from '@mui/material/Avatar';
 
 const testimonials = [
@@ -43,63 +44,115 @@ const testimonials = [
   },
 ];
 
+const FIXED_TESTIMONIAL_HEIGHT = 220; 
 
 export default function Testimonials() {
   return (
     
-      <Box component='section' id="testimonials" mt={5}>
-        <Container
-          sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          }}>
-            <Stack
+    <Box component='section' id="testimonials" sx={{ py: 6, bgcolor: '#f9f9f9' }}>
+      <Container> 
+        <Stack
           spacing={2}
           useFlexGap
-          sx={{ alignItems: 'center', width: { xs: '70%', sm: '70%' } }}
+          sx={{ alignItems: 'center', mb: 4 }}
         >
-            <PersonIcon sx={{ fontSize: 50 }} />
-            <Typography
+          <StarIcon sx={{ fontSize: 50, color: '#1AA7A9'  }} />
+          <Typography
             variant="h3"
+            component="h2"
             sx={{
-              display: 'flex',
-              flexDirection: { sm: '100%', md: '70%' },
               textAlign: 'center',
-             
+              color: '#005086',
             }}
           >
-            What Our Students Say
+            Student Success Stories
           </Typography>
-             <Divider />
+          <Divider sx={{ width: '100px', bgcolor: '#1AA7A9' }} />
+        </Stack>
          
-          <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 3 }}>
-      {testimonials.map((card) => (
-        <Card key={card.name} sx={{ maxWidth: 345 }}>
-      <CardActionArea>
-        <CardContent>
-          <div >
-            <Avatar  />
-          </div>  
-          <Typography gutterBottom variant="h5" component="div">
-             {card.name}
-          </Typography>
-           <Typography gutterBottom variant="h7" component="div">
-             {card.role}
-          </Typography>
-          <Divider />
-          <Typography variant="body1" sx={{ color: 'text.secondary' }}>
-           {card.review}
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-    </Card>
-      ))}
-        </Grid>
-          </Stack>
-        </Container>
-      </Box>
-    
+        
+        <Grid 
+          container 
+          spacing={{ xs: 3, md: 4 }} 
+          justifyContent="center" 
+        >
+          
+          {testimonials.slice(0, 4).map((t) => ( 
+            <Grid 
+              item 
+              key={t.name} 
+              xs={12}   
+              sm={6}    
+              md={3}    
+            >
+              <Card 
+                sx={{  
+                 
+                  height: 220,
+                   width:{md:550,sm:320,xs:320   },
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between', 
+                  textAlign: 'center', 
+                  p: 1.5,
+                  transition: 'transform 0.3s',
+                  '&:hover': { 
+                    transform: 'translateY(-5px)', 
+                    boxShadow: 6 
+                  },
+                }} 
+                elevation={3}
+              >
+                <CardActionArea sx={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                  
+            
+                  <CardContent sx={{ p: 1.5, pt: 2, flexGrow: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                   
+                      <Rating value={5} readOnly size="small" sx={{ mb: 1, color: '#FFD700' }} />
+                      
+                      
+                      <Typography 
+                          variant="body2" 
+                          sx={{ 
+                              color: 'text.primary', 
+                              fontStyle: 'italic',
+                              overflow: 'hidden',
+                              textOverflow: 'ellipsis',
+                              display: '-webkit-box',
+                              WebkitLineClamp: 4, 
+                              WebkitBoxOrient: 'vertical',
+                              mx: 'auto',
+                              mb: 1
+                          }}
+                      >
+                          {`"${t.review}"`}
+                      </Typography>
+                  </CardContent>
 
+                 
+                  <CardContent sx={{ p: 1.5, pb: 2, borderTop: '1px solid #eee' }}>
+                    <Stack direction="row" spacing={1} alignItems="center" justifyContent="center">
+                    
+                      <Avatar sx={{ bgcolor: '#1AA7A9', width: 40, height: 40, fontSize: 16 }}>
+                          {t.name.split(' ').map(n => n[0]).join('')}
+                      </Avatar>
+                      <Box sx={{ textAlign: 'left' }}>
+                        <Typography variant="subtitle1" sx={{ fontWeight: 'bold', color: '#005086', lineHeight: 1.2 }}>
+                            {t.name}
+                        </Typography>
+                        <Typography variant="caption" color="text.secondary" lineHeight={1.2}>
+                            {t.role}
+                        </Typography>
+                      </Box>
+                    </Stack>
+                  </CardContent>
+
+                </CardActionArea>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      </Container>
+    </Box>
   );
 }
