@@ -27,12 +27,14 @@ This is a single-page application for a fictional IELTS Institute, built as a su
 To run this project locally, follow these simple steps:
 
 1.  **Clone the repository:**
+
     ```bash
     git clone [Your GitHub Repository URL]
     cd [your-repository-folder]
     ```
 
 2.  **Install dependencies:**
+
     ```bash
     npm install
     ```
@@ -50,6 +52,6 @@ The application will now be running on `http://localhost:5173` (or another port 
 
 My main focus for this assignment was to demonstrate strong **design skills, responsiveness, and clean code**.
 
--   **Modern and Professional Design**: I aimed for a clean aesthetic with a focus on readability and user experience. The color palette is calming and professional, and the layout uses generous spacing to avoid a cluttered feel.
--   **Mobile-First Responsiveness**: I built the page with a mobile-first approach, using Tailwind's responsive utilities (`sm:`, `md:`, `lg:`) to ensure the layout gracefully adapts to smaller screens before scaling up for desktops.
--   **Code Clarity**: By breaking the UI into individual React components (e.g., `Navbar.jsx`, `Hero.jsx`, `Testimonials.jsx`), I've created a structure that is easy to read, understand, and modify. This component-based approach is key to building scalable applications.
+- **Modern and Professional Design**: I aimed for a clean aesthetic with a focus on readability and user experience. The color palette is calming and professional, and the layout uses generous spacing to avoid a cluttered feel.
+- **Mobile-First Responsiveness**: I built the page with a mobile-first approach, using Tailwind's responsive utilities (`sm:`, `md:`, `lg:`) to ensure the layout gracefully adapts to smaller screens before scaling up for desktops.
+- **Code Clarity**: By breaking the UI into individual React components (e.g., `Navbar.jsx`, `Hero.jsx`, `Testimonials.jsx`), I've created a structure that is easy to read, understand, and modify. This component-based approach is key to building scalable applications.
