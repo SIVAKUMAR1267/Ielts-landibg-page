@@ -2,6 +2,10 @@
 
 This is a single-page application for a fictional IELTS Institute, built as a submission for a front-end developer internship assignment. The goal was to create a modern, professional, and fully responsive home page using React.
 
+## 🚀 Live Demo
+
+[Link to Live Demo](https://ielts-landing-page.onrender.com)
+
 ---
 
 ## ✨ Features
